@@ -1,69 +1,117 @@
-🎰 Decentralized Lottery — Smart Contract on Sepolia
-Built with Hardhat + Solidity (0.8.20) | Fully On-Chain | Verifiable | Transparent
+Decentralized Lottery – Hardhat Project
 
-This repository contains a fully functional decentralized Lottery smart contract, deployed on the Sepolia Testnet.
-
-
-
+This project demonstrates a fully functional decentralized lottery smart contract deployed on the Sepolia Ethereum test network using Hardhat.
+The contract enables users to join the lottery by sending ETH, and allows the manager to pick a winner who receives the entire prize pool.
 
 Features
-✔️ Users can enter the lottery by sending ETH
-✔️ Owner (manager) can pick a winner
-✔️ Transparent prize pool — visible on-chain
-✔️ Fully built & deployed using Hardhat + ethers.js
-✔️ Clean & minimal contract optimized for testnets
-✔️ Deployment logs + Contract address included
+Smart Contract
 
+Written in Solidity (v0.8.20)
 
+Allows users to enter the lottery by paying a minimum amount
 
-• Contract Information
-Network - sepolia
-Contract Address - 0xE5b4D746e4B0752b5816e8FbbbFD1606dEE59323
-Compiler Version - 0.8.20
-Framework - Hardhat
+Stores all players in an array
 
+Allows the contract manager to pick a winner
 
+Transfers the entire contract balance to the selected winner
 
-📦 Tech Stack
-Solidity 0.8.x
-Hardhat (v2)
+Hardhat
+
+Project setup for development and testing
+
+Sepolia network configuration
+
+Deployment script included
+
+Contract successfully deployed to Sepolia testnet
+
+GitHub
+
+Full project pushed to public repository
+
+Includes smart contract, Hardhat config, deployment script, and README
+
+Smart Contract Address
+
+Sepolia Contract Address:
+0xE5b4D746e4B0752b5816e8FbbbFD1606dEE59323
+
+View on Etherscan:
+https://sepolia.etherscan.io/address/0xE5b4D746e4B0752b5816e8FbbbFD1606dEE59323
+
+Project Structure
+├── contracts
+│   └── Lottery.sol
+├── scripts
+│   └── deploy.js
+├── hardhat.config.js
+├── package.json
+├── .gitignore
+├── README.md
+└── test
+
+Tech Stack
+
+Solidity
+
+Hardhat
+
+JavaScript
+
 Ethers.js
-dotenv
-Node.js
 
+Sepolia Test Network
 
+How to Run Locally
+1. Clone the repository
+git clone https://github.com/Siddheshwar-cloud/lottery-hardhat.git
+cd lottery-hardhat
 
+2. Install dependencies
+npm install
 
-🛠️ Deployment (Hardhat Command)
+3. Create environment variables
+
+Create a .env file:
+
+SEPOLIA_RPC_URL=your_alchemy_or_infura_url
+PRIVATE_KEY=your_private_key
+
+4. Compile the contract
+npx hardhat compile
+
+5. Deploy to Sepolia
 npx hardhat run scripts/deploy.js --network sepolia
 
+Deployment Script
+const hre = require("hardhat");
 
+async function main() {
+  const Lottery = await hre.ethers.getContractFactory("Lottery");
+  const lottery = await Lottery.deploy();
+  await lottery.waitForDeployment();
+  console.log("Lottery deployed to:", lottery.target);
+}
 
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
-📜 Lottery.sol (Core Logic)
-Users enter via enter()
-Manager calls pickWinner()
-Prize instantly transferred on-chain
-Players array reset after each round
+Purpose of the Project
 
+This project was created as part of my Web3 learning journey.
+It demonstrates practical knowledge of:
 
+Smart contract development
 
+Hardhat workflow
 
-• What I Learned
-1)Configuring Hardhat networks
-2)Deploying live contracts to Sepolia
-3)Managing private keys safely
-4)Structuring smart contract projects
-5)Debugging compiler and migration issues
-6)Signing real transactions using ethers.js
+Network configuration
 
+Deployment using private RPC
 
+Etherscan verification workflow
 
-
-👨‍💻 Author
-Sidheshwar Yengudle
-Solidity | Smart Contract Developer
-
-
-
-⭐ If you like this project — consider giving a star!
+This repository will continue to evolve with frontend integration and improvements.
