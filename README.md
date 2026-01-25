@@ -9,7 +9,7 @@ This repository contains a fully functional decentralized Lottery smart contract
 Features
 ✔️ Users can enter the lottery by sending ETH  
 ✔️ Owner (manager) can pick a winner
-✔️ Transparent prize pool — visible on-chain
+✔️ Transparent prize pool — visible on-chain 
 ✔️ Fully built & deployed using Hardhat + ethers.js
 ✔️ Clean & minimal contract optimized for testnets
 ✔️ Deployment logs + Contract address included
