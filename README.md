@@ -6,7 +6,7 @@ This repository contains a fully functional decentralized Lottery smart contract
 
 
 
-Features
+Features 
 ✔️ Users can enter the lottery by sending ETH  
 ✔️ Owner (manager) can pick a winner
 ✔️ Transparent prize pool — visible on-chain 
